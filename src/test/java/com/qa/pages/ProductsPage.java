@@ -21,6 +21,11 @@ public class ProductsPage extends MenuPage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\"test-Price\" and @text=\"$29.99\"]")
     private WebElement SLBackpackPrice;
 
+    @AndroidFindBy(accessibility = "test-ADD TO CART")
+    private WebElement addToCart;
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.widget.ImageView")
+    private WebElement cartButton;
+
     public String getTitle() {
         return getText(productHeader, "Product Page Title is: ");
     }
@@ -36,5 +41,14 @@ public class ProductsPage extends MenuPage {
     public ProductDetailsPage clickSLBackpackTitle() {
         clickElement(SLBackpackTitle, "Clicking on SLB Title link");
         return new ProductDetailsPage();
+    }
+    public void clickAddToCartButton() {
+        waitForElementToBeClickable(addToCart);
+        clickElement(addToCart, "Clicking on Add To Cart Button");
+    }
+    public CartPage clickCartButton() {
+        waitForElementToBeClickable(cartButton);
+        clickElement(cartButton, "Clicking on Cart Button");
+        return new CartPage();
     }
 }

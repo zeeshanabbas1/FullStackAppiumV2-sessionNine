@@ -91,6 +91,7 @@ public class ProductTest extends AppFactory {
         utilities.log().info("Actual Product page title is - {}\nExpected Product page title is - {}", actualProductTitle, expectedProductTitle);
         Assert.assertEquals(actualProductTitle, expectedProductTitle);
         softAssert.assertAll();
+
     }
 
     @AfterMethod

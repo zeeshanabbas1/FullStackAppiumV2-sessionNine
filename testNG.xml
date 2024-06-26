@@ -11,6 +11,8 @@
         <classes>
             <class name="com.qa.tests.LoginTest"/>
             <class name="com.qa.tests.ProductTest"/>
+            <class name="com.qa.tests.CartTest"/>
         </classes>
     </test>
+
 </suite>
